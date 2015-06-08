@@ -1,0 +1,2 @@
+class OutputWriter
+end
