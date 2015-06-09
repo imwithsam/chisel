@@ -1,7 +1,5 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require_relative '../lib/emphasis_renderer'
+require './test/test_helper'
+require './lib/emphasis_renderer'
 
 class EmphasisRendererTest < MiniTest::Test
   def test_renders_emphasis

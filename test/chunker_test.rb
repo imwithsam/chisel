@@ -1,7 +1,5 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require_relative '../lib/chunker'
+require './test/test_helper'
+require './lib/chunker'
 
 class ChunkerTest < MiniTest::Test
   def test_chunks_based_on_double_new_lines

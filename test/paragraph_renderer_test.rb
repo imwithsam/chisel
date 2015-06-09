@@ -1,7 +1,5 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require_relative '../lib/paragraph_renderer'
+require './test/test_helper'
+require './lib/paragraph_renderer'
 
 class ParagraphRendererTest < MiniTest::Test
   def test_renders_paragraph

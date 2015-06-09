@@ -1,15 +1,12 @@
 require 'simplecov'
 SimpleCov.start
-
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require_relative '../lib/chisel'
+require './test/test_helper'
+require './lib/chisel'
 
 class ChiselTest < MiniTest::Test
   def test_reads_and_writes_files
-    input_file = "test.markdown"
-    output_file = "test.html"
+    input_file = "./test/test.markdown"
+    output_file = "./test/test.html"
 
     Chisel.run(input_file, output_file)
 
@@ -17,9 +14,9 @@ class ChiselTest < MiniTest::Test
     assert File.exist?(output_file), "#{output_file} does NOT exist!"
   end
 
-  def test_parses_headers_and_paragraphs
-    input_file = "test.markdown"
-    output_file = "test.html"
+  def test_renders_headers_and_paragraphs
+    input_file = "./test/test.markdown"
+    output_file = "./test/test.html"
     expected = "<h1>This is an <em>emphasized</em> header.</h1>\n\n" \
                 "<p>This is a <strong>strong</strong> paragraph.</p>\n\n"
 

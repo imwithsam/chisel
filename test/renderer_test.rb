@@ -1,7 +1,5 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require_relative '../lib/renderer'
+require './test/test_helper'
+require './lib/renderer'
 
 class RendererTest < MiniTest::Test
   def test_renders_markdown
