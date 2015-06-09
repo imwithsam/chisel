@@ -3,3 +3,4 @@ class ParagraphRenderer
     "<p>#{markdown.chomp.chomp}</p>\n\n"
   end
 end
+

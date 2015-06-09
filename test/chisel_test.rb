@@ -20,8 +20,8 @@ class ChiselTest < MiniTest::Test
   def test_parses_headers_and_paragraphs
     input_file = "test.markdown"
     output_file = "test.html"
-    expected = "<h1>This is a header.</h1>\n\n" \
-                "<p>This is a paragraph.</p>\n\n"
+    expected = "<h1>This is an <em>emphasized</em> header.</h1>\n\n" \
+                "<p>This is a <strong>strong</strong> paragraph.</p>\n\n"
 
     actual = Chisel.run(input_file, output_file)
 

@@ -1,3 +1,3 @@
-# This is a header.
+# This is an *emphasized* header.
 
-This is a paragraph.
+This is a **strong** paragraph.
