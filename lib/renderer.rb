@@ -13,25 +13,15 @@ class Renderer
 
   def self.parse(chunks)
     chunks.map do |chunk|
-      emphasized_chunk = EmphasisRenderer.render(chunk)
-      formatted_chunk = StrongRenderer.render(emphasized_chunk)
+      formatted_chunk = StrongRenderer.render(chunk)
+      emphasized_chunk = EmphasisRenderer.render(formatted_chunk)
 
-      if chunk.match(/^\#{1,6}\s?/) != nil
-        HeaderRenderer.render(formatted_chunk)
+      if chunk.start_with?("#")
+        HeaderRenderer.render(emphasized_chunk)
       else
-        ParagraphRenderer.render(formatted_chunk)
+        ParagraphRenderer.render(emphasized_chunk)
       end
     end
   end
-
-  # def self.parse_headers(chunks)
-  #   chunks.map do |chunk|
-  #     if chunk.match(/^\#{1,6}\s?/) != nil
-  #       HeaderRenderer.render(chunk)
-  #     else
-  #       ParagraphRenderer.render(chunk)
-  #     end
-  #   end
-  # end
 end
 
