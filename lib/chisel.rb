@@ -14,4 +14,7 @@ class Chisel
   end
 end
 
-Chisel.run(ARGV[0], ARGV[1])
+if !ARGV[0].nil? && !ARGV[1].nil?
+  Chisel.run(ARGV[0], ARGV[1])
+end
+

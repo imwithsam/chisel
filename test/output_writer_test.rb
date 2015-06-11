@@ -5,7 +5,7 @@ class OutputWriterTest < MiniTest::Test
   def test_it_creates_a_file
     file_name = "./test/test.html"
     output = "<h1>This is a header.</h1>\n\n" \
-                "<p>This is a paragraph.</p>\n"
+                "<p>\n  This is a paragraph.\n</p>\n\n"
 
     OutputWriter.write(output, file_name)
 

@@ -6,7 +6,7 @@ class RendererTest < MiniTest::Test
     input = "# This is an *emphasized* header.\n\n" \
             "This is a **strong** paragraph.\n"
     expected = "<h1>This is an <em>emphasized</em> header.</h1>\n\n" \
-                "<p>This is a <strong>strong</strong> paragraph.</p>\n\n"
+                "<p>\n  This is a <strong>strong</strong> paragraph.\n</p>\n\n"
 
     actual = Renderer.render(input)
 
@@ -18,19 +18,14 @@ class RendererTest < MiniTest::Test
             "## Chapter 1: The Beginning\n\n" \
             "\"You just *have* to try the cheesecake,\" he said. " \
             "\"Ever since it appeared in **Food & Wine** this place " \
-            "has been packed every night.\"\n"
+            "has been packed every night.\"\n\n"
     expected = "<h1>My Life in Desserts</h1>\n\n" \
                 "<h2>Chapter 1: The Beginning</h2>\n\n" \
-                "<p>\"You just <em>have</em> to try the cheesecake,\" he said. " \
+                "<p>\n  \"You just <em>have</em> to try the cheesecake,\" he said. " \
                 "\"Ever since it appeared in <strong>Food & Wine</strong> this place " \
-                "has been packed every night.\"</p>\n"
+                "has been packed every night.\"\n</p>\n\n"
 
     actual = Renderer.render(input)
-
-    # puts "expected:"
-    # puts expected
-    # puts "actual:"
-    # puts actual
 
     assert_equal expected, actual
   end

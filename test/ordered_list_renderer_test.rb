@@ -6,7 +6,7 @@ class OrderedListRendererTest < MiniTest::Test
     input = "1. List item 1\n"
     expected = "<ol>\n" \
                 "  <li>List item 1</li>\n" \
-                "</ol>\n"
+                "</ol>\n\n"
 
     actual = OrderedListRenderer.render(input)
 
@@ -21,7 +21,7 @@ class OrderedListRendererTest < MiniTest::Test
                 "  <li>List item 1</li>\n" \
                 "  <li>List item 2</li>\n" \
                 "  <li>List item 3</li>\n" \
-                "</ol>\n"
+                "</ol>\n\n"
 
     actual = OrderedListRenderer.render(input)
 

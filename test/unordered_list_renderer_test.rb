@@ -6,7 +6,7 @@ class UnorderedListRendererTest < MiniTest::Test
     input = "* List item 1\n"
     expected = "<ul>\n" \
                 "  <li>List item 1</li>\n" \
-                "</ul>\n"
+                "</ul>\n\n"
 
     actual = UnorderedListRenderer.render(input)
 
@@ -21,7 +21,7 @@ class UnorderedListRendererTest < MiniTest::Test
                 "  <li>List item 1</li>\n" \
                 "  <li>List item 2</li>\n" \
                 "  <li>List item 3</li>\n" \
-                "</ul>\n"
+                "</ul>\n\n"
 
     actual = UnorderedListRenderer.render(input)
 
