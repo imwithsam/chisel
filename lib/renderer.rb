@@ -21,6 +21,7 @@ class Renderer
       chunk = self.parse_formatting(chunk)
       chunk = self.parse_strong(chunk)
       chunk = self.parse_emphasize(chunk)
+      chunk = self.parse_links(chunk)
       self.parse_headers_and_paragraphs(chunk)
     end
   end
