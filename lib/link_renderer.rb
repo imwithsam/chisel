@@ -1,5 +1,4 @@
 class LinkRenderer
-  # This is [an example](http://example.com/ "Title") inline link.
   def self.render(markdown)
 
     single_link_fragments = link_fragments_from(markdown)

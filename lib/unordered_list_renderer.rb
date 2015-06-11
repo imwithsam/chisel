@@ -1,8 +1,9 @@
 class UnorderedListRenderer
   def self.render(markdown)
-    list_items = self.chunk(markdown).map do |list_item|
-      # list_item.gsub(/^\*\s?(.*)/, "  <li>\\1</li>\n")
+    # Old RegEx code
+    # list_item.gsub(/^\*\s?(.*)/, "  <li>\\1</li>\n")
 
+    list_items = self.chunk(markdown).map do |list_item|
       list_item.sub("* ", "  <li>") + "</li>\n"
     end
 
