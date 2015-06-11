@@ -1,4 +1,3 @@
-require 'pry'
 require './test/test_helper'
 require './lib/renderer'
 
@@ -56,7 +55,7 @@ class RendererTest < MiniTest::Test
                 "<p>\n  This is <a href='http://example.com/'>an example</a> inline link, and here is <a href='http://badmotivator.io/'>another example</a>.\n</p>\n\n"
 
     actual = Renderer.render(input)
-binding.pry
+
     assert_equal expected, actual
   end
 end

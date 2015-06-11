@@ -1,4 +1,3 @@
-require 'pry'
 require './lib/chunker'
 require './lib/emphasis_renderer'
 require './lib/strong_renderer'
