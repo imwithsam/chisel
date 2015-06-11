@@ -12,4 +12,26 @@ class RendererTest < MiniTest::Test
 
     assert_equal expected, actual
   end
+
+  def test_passes_acceptance_test
+    input = "# My Life in Desserts\n\n" \
+            "## Chapter 1: The Beginning\n\n" \
+            "\"You just *have* to try the cheesecake,\" he said. " \
+            "\"Ever since it appeared in **Food & Wine** this place " \
+            "has been packed every night.\"\n"
+    expected = "<h1>My Life in Desserts</h1>\n\n" \
+                "<h2>Chapter 1: The Beginning</h2>\n\n" \
+                "<p>\"You just <em>have</em> to try the cheesecake,\" he said. " \
+                "\"Ever since it appeared in <strong>Food & Wine</strong> this place " \
+                "has been packed every night.\"</p>\n"
+
+    actual = Renderer.render(input)
+
+    # puts "expected:"
+    # puts expected
+    # puts "actual:"
+    # puts actual
+
+    assert_equal expected, actual
+  end
 end

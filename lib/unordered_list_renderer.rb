@@ -6,7 +6,7 @@ class UnorderedListRenderer
       list_item.sub("* ", "  <li>") + "</li>\n"
     end
 
-    "<ul>\n" + list_items.join + "</ul>\n"
+    "<ul>\n" + list_items.join + "</ul>\n\n"
   end
 
   def self.chunk(markdown)

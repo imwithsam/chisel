@@ -1,6 +1,6 @@
-require_relative 'input_reader'
-require_relative 'renderer'
-require_relative 'output_writer'
+require './lib/input_reader'
+require './lib/renderer'
+require './lib/output_writer'
 
 class Chisel
   def self.run(input_file, output_file)
@@ -14,3 +14,4 @@ class Chisel
   end
 end
 
+Chisel.run(ARGV[0], ARGV[1])

@@ -7,7 +7,7 @@ class OrderedListRenderer
       list_item.sub(list_item[0..(index + 1)], "  <li>") + "</li>\n"
     end
 
-    "<ol>\n" + list_items.join + "</ol>\n"
+    "<ol>\n" + list_items.join + "</ol>\n\n"
   end
 
   def self.chunk(markdown)
