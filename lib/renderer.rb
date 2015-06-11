@@ -4,6 +4,7 @@ require './lib/emphasis_renderer'
 require './lib/strong_renderer'
 require './lib/unordered_list_renderer'
 require './lib/ordered_list_renderer'
+require './lib/link_renderer'
 require './lib/header_renderer'
 require './lib/paragraph_renderer'
 
@@ -32,6 +33,12 @@ class Renderer
       emphasize_symbol_count = chunk.count("*")
       if emphasize_symbol_count > 0 && emphasize_symbol_count.even?
         chunk = EmphasisRenderer.render(chunk)
+      end
+
+      link_open_symbol_count = chunk.count("[")
+      link_close_symbol_count = chunk.count("]")
+      if link_open_symbol_count > 0 && (link_open_symbol_count == link_close_symbol_count)
+        chunk = LinkRenderer.render(chunk)
       end
 
       if chunk.start_with?("#")
